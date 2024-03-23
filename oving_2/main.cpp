@@ -7,6 +7,9 @@ int main() {
     cout << " 3) input og return sum \n";
     cout << " 4) isOdd \n";
     cout << " 5) sum of numbers \n";
+    cout << " 6) int until zero \n";
+    cout << " 7) convertNOKToEUR() \n";
+    cout << " 8) gangetabell \n";
 
     int n = 0;
     cin >> n;
@@ -30,7 +33,16 @@ int main() {
         case 5:
             sumNumbers();
         break;
+        case 6:
+            intUntilZero();
+            break;
+        case 7:
+            convertNOKToEUR();
+        break;
         default:
+        case 8:
+            gangetabell();
+        break;
         cout << "feil inntast \n";
     }
 
