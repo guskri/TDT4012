@@ -1,4 +1,5 @@
 #include "del_1.h"
+#include "grafikk.h"
 
 int main() {
     cout << " skriv inn tall for oppgave \n";
@@ -10,6 +11,10 @@ int main() {
     cout << " 6) int until zero \n";
     cout << " 7) convertNOKToEUR() \n";
     cout << " 8) gangetabell \n";
+    cout << " 9) andregreadslgning \n";
+    cout << " 10) pythagoras \n";
+    cout << " 11) renter \n";
+
 
     int n = 0;
     cin >> n;
@@ -26,7 +31,7 @@ int main() {
             inputIntegerAndPrintSum();
         break;
         case 4:
-            for (int i; i < 15; ++i){
+            for (int i = 0; i < 15; ++i){
             cout << (isOdd(i) ? "true" : "false");
             }
         break;
@@ -35,14 +40,25 @@ int main() {
         break;
         case 6:
             intUntilZero();
-            break;
+        break;
         case 7:
             convertNOKToEUR();
         break;
-        default:
         case 8:
             gangetabell();
         break;
+        case 9:
+            solveQuadraticEquation();
+        break;
+        case 10:
+            pythagoras();
+        break;
+        case 11: {
+            vector<int> resultat1 = calculateBalance();
+            printBalance(resultat1);
+        }
+        break;
+        default:
         cout << "feil inntast \n";
     }
 

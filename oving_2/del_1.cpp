@@ -91,3 +91,57 @@ void gangetabell() {
           cout << "\n"; // nylinje   
     }
 }
+
+double discriminant(double a, double b, double c) {
+    return pow(b,2)-(4*a*c); //b**2 -4ac
+}
+
+void printRealRoots(double a, double b, double c){
+    if (discriminant(a,b,c) > 0) {
+        cout << "2 løsninger: \n";
+        double x1 = (-b + sqrt(discriminant(a,b,c)))/2*a;
+        double x2 = (-b - sqrt(discriminant(a,b,c)))/2*a;
+        cout << "rot1: " << x1 << "rot2: " << x2;
+    }  else if (discriminant(a,b,c) == 0) {
+        cout << "1 løsning: \n";
+        double x3 = (-b + sqrt(discriminant(a,b,c)))/2*a;
+        cout << x3;
+    } else {
+        cout << "ingen løsning";
+    }
+}
+
+void solveQuadraticEquation(){
+    cout << "skriv inn 3 desimaltall du vil løse (x**2 +bx +c) \n";
+    double a,b,c;
+    cin >> a;
+    cin >> b;
+    cin >> c;
+    return printRealRoots(a,b,c);
+}
+
+vector<int> calculateBalance(){
+    int rente,inskudd,aar;
+    cout << "skriv inn renten (heltall): \n";
+    cin >> rente;
+    cout << "legg inn inskudd: \n";
+    cin >> inskudd;
+    cout << "antall aar: \n";
+    cin >> aar;
+    vector<int> resultat{}; // starter med tom vektor
+
+    for (int i = 0; i < aar; ++i){
+        int balanse = static_cast<int>(inskudd * pow(1 + static_cast<double>(rente) / 100, i));
+        resultat.push_back(balanse);
+    }
+
+    return resultat;
+}
+
+void printBalance(vector<int> resultat){
+    cout << "år   saldo \n";
+    for (int i = 0; i < resultat.size(); ++i){
+        cout << i << "    "<< resultat.at(i) << "\n";
+    }
+}
+
