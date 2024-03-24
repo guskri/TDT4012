@@ -3,8 +3,11 @@
 
 void testDeviation(double compareOperand, double toOperand,double maxError, string name);
 
+
+
 int main() {
-    testDeviation(100.0,100.05,0.1, "test 1");
+    testDeviation(posX(0.0,50.0,5.0), 250.0, 0.001, "posX(0.0,50.0,5.0)");
+    
 
     return 0;
 }
