@@ -1,7 +1,5 @@
 #include "python.h"
 
-#include "std_lib_facilities.h"
-
 //------------------------------------------------------------------------------'
 
 // C++ programs start by executing the function main
