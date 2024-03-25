@@ -1,4 +1,6 @@
 #include "cannonball.h"
+#include "utilities.h"
+#include "cannonball_viz.h"
 
 double acclY(){
     return -9.81;
@@ -21,7 +23,7 @@ void printTime(double time){
     int totalMinutt = static_cast<int>(time) / 60;
     int hours = totalMinutt / 60;
     int minutt = totalMinutt % 60;
-    cout << "tid er" << hours << " timer" << minutt << " minutt og " << time << " sekund \n";
+    cout << "" << hours << " timer " << minutt << " minutt og " << time << " sekund \n";
 }
 
 double flightTime(double initVelocityY) {
@@ -72,3 +74,29 @@ double targetPractice(double distanceToTarget,double velocityX,double velocityY)
     return distanceToTarget - getDistanceTraveled(velocityX,velocityY);
 }
 
+void playTargetPractice(){
+    int blink = randomWithLimits(100,1000); //setter opp blink
+
+    for(int i = 10; i > 0; --i){
+        cout << "blink er " << blink << " meter unna\n";
+        cout << "du har " << i << " forsøk til å treffe blinken \n";
+        double vinkel = getUserInputTheta();
+        double hastighet = getUserInputInitVelocity();
+        double hastighetX = getVelocityX(vinkel,hastighet);
+        double hastighetY = getVelocityY(vinkel, hastighet);
+        double skudd = getDistanceTraveled(hastighetX, hastighetY);
+        double resultat = targetPractice(blink, hastighetX,hastighetY);
+        //double tid = flightTime(hastighetY);
+        //printTime(tid);
+        cannonBallViz(blink, 1000, hastighetX, hastighetY, 50);
+
+        cout << "ditt skudd landet på \n" << skudd << " meter\n";
+        if (abs(resultat) < 5){
+            cout << " Gratulerer du traff blink\n";
+            break;
+        } else {
+            cout << "bom\n";
+        }
+}
+    cout << "du er tom for forsøk\n";
+}

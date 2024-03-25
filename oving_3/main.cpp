@@ -6,9 +6,14 @@ void testDeviation(double compareOperand, double toOperand,double maxError, stri
 
 
 int main() {
-    testDeviation(posX(0.0,50.0,5.0), 250.0, 0.001, "posX(0.0,50.0,5.0)");
+    //testDeviation(posX(0.0,50.0,5.0), 250.0, 0.001, "posX(0.0,50.0,5.0)");
     
+    /*for (int i=0; i < 10; ++i){
+        int number = randomWithLimits(1,10);
+        cout << number;
+    }*/
 
+    playTargetPractice();
     return 0;
 }
 
