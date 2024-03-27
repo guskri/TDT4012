@@ -1,32 +1,45 @@
 #include "card.h"
+#include "blackJack.h"
 
-string suitToString(Suit card){
+map<Suit, string>
 
-const std::map<enum class Suit, string> suitToString{
-    {Suit::clubs, "clubs"},
-    {Suit::diamonds, "diamonds"},
-    {Suit::hearts, "hearts"},
-    {Suit::spades, "spades"}
-    };  
-    return suitToString.at(card);
+suitToStringMap = {
+    {Suit::clubs, "Clubs"},
+    {Suit::diamonds, "diamonds" },
+    {Suit::hearts , "hearts"},
+    {Suit::spades, "spades" }
+};
+
+map<Rank, string>
+
+rankToStringMap = {
+    {Rank::two, "two"},
+    {Rank::three, "three"},
+    {Rank::four, "four"},
+    {Rank::five, "five"},
+    {Rank::six, "six"},
+    {Rank::seven,"seven"},
+    {Rank::eight, "eight"},
+    {Rank::nine, "nine"},
+    {Rank::ten, "ten"},
+    {Rank::jack, "jack"},
+    {Rank::queen, "queen"},
+    {Rank::king, "king"},
+    {Rank::ace, "ace"},
+ };
+
+string suitToString(Suit suit){
+    return suitToStringMap.at(suit);
 }
 
-string rankToString(Rank card){
-    const std::map<enum class Rank, string> rankToString{
-        {Rank::one, "one"},
-        {Rank::two, "two"},
-        {Rank::three, "three"},
-        {Rank::four, "four"},
-        {Rank::five, "five"},
-        {Rank::six, "six"},
-        {Rank::seven, "seven"},
-        {Rank::eight, "eight"},
-        {Rank::nine, "nine"},
-        {Rank::ten, "ten"},
-        {Rank::jack, "jack"},
-        {Rank::queen, "queen"},
-        {Rank::king, "king"},
-        {Rank::ace, "ace"}
-    };
-    return rankToString.at(card);
+string rankToString(Rank rank){
+    return rankToStringMap.at(rank);
+}
+
+Card::Card(Suit suit, Rank rank) : s(suit), r(rank){
+    
+}
+
+string Card::toString() {
+    return rankToString(r) + " of " + suitToString(s);
 }

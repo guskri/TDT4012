@@ -1,7 +1,13 @@
 #include "card.h"
+#include "std_lib_facilities.h"
+#include "cardDeck.h"
+#include "blackJack.h"
 
-int main() {
+//------------------------------------------------------------------------------'
 
-    suitToString(Suit::diamonds);
-    return 0;
+int main(){
+
+Blackjack b;
+b.playGame();
+return 0;
 }
