@@ -19,4 +19,5 @@ void addCourse(string emnekode, string emneNavn);
 void removeCourse(string kurs);
 void getCourse(string kurs);
 void storeCourse(const CourseCatalog c);
+void loadCourse();
 };

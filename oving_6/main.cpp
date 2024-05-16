@@ -8,6 +8,7 @@
 #include "Read.h"
 #include <map>
 #include "emnekatalog.h"
+#include "bouncingBall.h"
 
 //------------------------------------------------------------------------------'
 const map<string, string> capitalsMap {
@@ -33,6 +34,9 @@ CourseCatalog catalog;
 catalog.addCourse("TDT4102", "Informasjonsteknologi");
 catalog.storeCourse(catalog);
 cout << catalog;
-    return 0;
+    
+    bouncingBall();
+    
+return 0;
 }
 //------------------------------------------------------------------------------

@@ -1,2 +1,2 @@
-IFYT  Fysikk
-TDT4102  Programmering
+IFYT :  Fysikk
+TDT4102 :  Programmering
